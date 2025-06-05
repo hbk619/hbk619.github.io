@@ -1,0 +1,110 @@
+---
+layout: post
+title:  "IntelliSay"
+date:   2025-05-27 09:52 +0100
+categories: intellij screenreader plugin
+---
+<p>
+    <a href="https://github.com/hbk619/intellisay">IntelliSay</a> is a plugin for Intellij which adds sounds and speech
+    for various things.
+</p>
+
+<h2>Why?</h2>
+
+<p>
+IntelliJ is a really awesome tool to use when writing code, and has a ton of useful features from easily debugging apps
+to fantastic auto complete, but I'd heard screen reader devs had been warned against using it. Jetbrain's Youtrack has
+an open bug with <a href="https://youtrack.jetbrains.com/issue/IJPL-58367/Various-accessibility-issues-as-of-2023.3">
+    a pretty detailed list of various issues a screen reader user ran into</a>, it's a long list!
+</p>
+
+<p>
+    Tackling all of the issues is a huge undertaking and while Jetbrains gets to work on that, I wanted to tackle some
+    of the core features that other IDE's have.
+</p>
+
+<h2>What?</h2>
+<h3>Sounds</h3>
+<p>
+    A fairly standard feature in other IDE's is to play a short sound when navigating to a line that contains an error
+    or breakpoint. IntelliSay implements this, with a warning noise to indicate there's a problem and an error noise to
+    indicate you're on the error. A bonus feature is a shortcut to guide you towards the error and then read out the error
+    message. "Not on issue, go right, or press F2." or "Not on issue, go left.".
+</p>
+
+<p>
+    Breakpoints make sounds too, when adding/removing or navigating to a line with one. Because of the latter, when you
+    debug an app and it pauses on a breakpoint, the "you're on a breakpoint" noise will be triggered.
+</p>
+
+<h3>Debugging</h3>
+
+<p>
+There's a detailed panel for evaluating code when paused on a breakpoint, but it's difficult to get to and you lose
+    context of where you are in the code. With IntelliSay, just select some text and press the shortcut
+    <code>control meta alt v</code> and the selected code will be evaluated and the result spoken, with the type and
+    value. This works with any text you select and will be evaluated in the context of your current project.
+</p>
+
+<h3>Context</h3>
+
+<p>
+    Intellij's pinning of method/class names to the top of the screen is great to know where you are at a glance, but
+I couldn't get a screen reader to read it easily, without losing the current place. So IntelliSay has a shortcut
+to read the current context, "Inside method main arguments are args JavaLang string return type is void class in main"
+    without moving your screen reader cursor.
+</p>
+
+<h3>File names</h3>
+
+Quickly find out what file you're in with a shortcut, or have it automatically announced when opened from the project
+view.
+
+<h3>Dumb mode</h3>
+
+<p>
+    Intellij has a state called dumb mode which means not all features of the IDE are available yet as it still scanning
+    your project and configuring things in the background, visually there's an indicator in the bottom right of the
+    window that this is happening and code often won't have syntax highlighting. IntelliSay is hooked into this state
+    and can announce when dumb mode is entered and exited, so you know to wait patiently while it does its thing.
+</p>
+
+<h3>Python Interpreters</h3>
+
+<p>
+    If you're using the python plugin, instead of trying to navigate the many dialogues to setting a python interpreter
+    there's a shortcut to bring up a simple text input where you can type the path to your interpreter and press enter,
+    then IntelliJ will setup the project with your interpreter.
+</p>
+
+<h3>Help!</h3>
+<p>
+That's a lot of shortcuts to remember! That's why there's a help dialogue with the default keyboard shortcut of
+<code>control alt meta shift h</code>. This brings up a dialogue that lists all the commands and their associated
+shortcut. If you select an item and press enter it will do the action, escape closes the dialogue.
+</p>
+
+<h3>Configuring and customising</h3>
+<p>
+    As everyone's experience is personal, so too can IntelliSay be personalised. The settings dialog allows you to
+    supply a path to custom sounds, check the
+    <a href="https://github.com/hbk619/intellisay?tab=readme-ov-file#customising-sounds">project readme for custom sound file names</a>.
+    IntelliJ lets you change any shortcut too, via File > Settings > Keymap > search for intellisay.
+    Beeps can be enabled or disabled via shortcuts, a quick action (press shift twice, then search for what you want to
+    do) or the settings dialogue (File > Settings > Tools > IntelliSay).
+</p>
+
+<h4>MacOS</h4>
+<p>
+    On Macos, if you have "Allow voiceover to be controlled by AppleScript" enabled, Intellisay will use VoiceOver,
+    if not it will use the say command. If you want to force it to use the say command there's a setting for that.
+</p>
+
+<h2>How?</h2>
+<p>
+    Download the intellisay-1.0-SNAPSHOT.zip file from the
+    <a href="https://github.com/hbk619/intellisay/releases/">IntelliSay releases</a> page. In IntelliJ
+    press shift twice to bring up the quick actions menu and select "Install plugin from Disk".
+    Select the downloaded zip and restart IntelliJ. You should hear "IntelliSay has started", if not check the
+    <a href="https://github.com/hbk619/intellisay?tab=readme-ov-file#troubleshooting">troubleshooting guide</a>.
+</p>

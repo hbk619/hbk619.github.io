@@ -1,0 +1,9 @@
+<header class="header">
+    <button id="dark-mode-toggle" class="dark-mode-toggle">Toggle Dark Mode</button>
+    <div class="header-wrapper">
+        <h1>HBK619</h1>
+        {%- unless page_titles == empty %}
+            {% include nav.html paths = page_paths %}
+        {%- endunless %}
+    </div>
+</header>

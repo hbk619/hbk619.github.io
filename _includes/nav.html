@@ -1,0 +1,12 @@
+<nav class="nav">
+    <ul class="list-links">
+        {%- assign sorted = site.pages | sort: 'order' -%}
+        {%- for path in  sorted -%}
+            {%- if path.title and path.nav == true %}
+                <li class="list-link">
+                    <a href="{{ path.url | relative_url }}">{{ path.title | escape }}</a>
+                </li>
+            {%- endif -%}
+        {%- endfor %}
+    </ul>
+</nav>
