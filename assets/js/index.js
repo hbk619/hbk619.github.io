@@ -15,4 +15,10 @@ document.addEventListener("DOMContentLoaded", function() {
         localStorage.setItem("theme", isDark ? "dark" : "light");
         darkModeToggle.textContent = `Enable ${isDark ? "light" : "dark"} mode`;
     });
+
+    const scrollToTopButton = document.getElementById("goToTop");
+
+    window.addEventListener('scroll', () => {
+        scrollToTopButton.classList.toggle('hidden', document.body.scrollTop < 20 && document.documentElement.scrollTop < 20)
+    });
 });

@@ -33,6 +33,10 @@ ul, ol, dl, figure,
     margin-bottom: 15px;
 }
 
+.hidden {
+    display: none;
+}
+
 body {
     font: 400 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     color: var(--color);
@@ -359,7 +363,6 @@ pre > code {
     margin-top: 20px;
 }
 
-
 table {
     margin-bottom: 30px;
     width: 100%;
@@ -427,6 +430,17 @@ table td {
     .post-content h4 {
         font-size: 18px;
     }
+}
+
+.btn {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: 1px solid var(--code-border-color);
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
 }
 
 /*# sourceMappingURL=main.css.map */
