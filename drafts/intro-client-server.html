@@ -1,0 +1,169 @@
+---
+layout: post
+title:  "Introduction to client and server terminology"
+categories: introduction client server web
+---
+
+<section>
+    <p>As a student I heard the terms "client", "server", "DNS" and "cache" <em>a lot</em> on my placement I used a VNC client to connect
+        to servers and worked on a web app and still didn't really understand, until I saw the physical server in a room
+        and realised the "client" was the thing on my machine and server was some other machine somewhere else.
+        Had a kind-hearted soul created some analogies for me I might have understood faster, so here's one for your entertainment.</p>
+
+    <p>We join Dave when he has just been told by his friend "Mate, there's this sick place that cooks your food and delivers.
+        It's called Pizza Hut!".</p>
+    <div class="comic-strip" id="comic">
+        <figure class="comic-frame"
+                aria-labelledby="frame-1"
+                aria-describedby="frame-1-desc">
+            <h2 id="frame-1" class="hidden">Frame 1</h2>
+
+            <div class="comic-speech">
+                <div class="thought-bubble " aria-hidden="true">
+                    <div class="small-circle"></div>
+                    I want some pizza...
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="176" aria-hidden="true" class="comic-svg" viewBox="-0.5 -0.5 64 176"><g data-cell-id="0"><g stroke="light-dark(#000,#fff)" data-cell-id="1"><path fill="none" stroke-miterlimit="10" stroke-width="4" d="M32 132V62" data-cell-id="YWU42JsZBOxkns-T1D1i-14" pointer-events="stroke"/><path fill="none" stroke-miterlimit="10" stroke-width="4" d="M12 122V82l20-10" data-cell-id="YWU42JsZBOxkns-T1D1i-15" pointer-events="stroke"/><path fill="none" stroke-miterlimit="10" stroke-width="4" d="M22 172v-30l10-10" data-cell-id="YWU42JsZBOxkns-T1D1i-17" pointer-events="stroke"/><circle cx="32" cy="32" r="30" fill="transparent" stroke-width="4" data-cell-id="YWU42JsZBOxkns-T1D1i-18" pointer-events="all"/><path fill="none" stroke-miterlimit="10" stroke-width="5" d="M52 152v20-20l-20-20" data-cell-id="YWU42JsZBOxkns-T1D1i-19" pointer-events="stroke"/><path fill="none" stroke-miterlimit="10" stroke-width="5" d="m32 72 20 10-8.79-22.17" data-cell-id="YWU42JsZBOxkns-T1D1i-20" pointer-events="stroke"/></g></g></svg>
+            </div>
+
+            <p id="frame-1-desc" class="sr-only">
+                Dave the stickman thinking "I want some pizza..."
+            </p>
+        </figure>
+
+        <figure class="comic-frame"
+                aria-labelledby="frame-2"
+                aria-describedby="frame-2-desc">
+            <h2 id="frame-2" class="hidden">Frame 2</h2>
+
+            <div class="comic-speech">
+                <div class="thought-bubble " aria-hidden="true">
+                    <div class="small-circle"></div>
+                    Now what's the number?
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="149" height="176" aria-hidden="true" class="comic-svg" viewBox="-0.5 -0.5 149 176"><g data-cell-id="0"><g stroke="light-dark(#000,#fff)" data-cell-id="1"><path fill="none" stroke-width="4" d="M72 57h65v70H72z" data-cell-id="oWbz2HTyQ65bcpPEo5mm-18" pointer-events="all"/><path fill="none" stroke-miterlimit="10" stroke-width="3" d="m79.5 87 20-20h20l10 10-10 10-10-10-20 20 10 10-10 10-10-10V87" data-cell-id="oWbz2HTyQ65bcpPEo5mm-19" pointer-events="stroke"/><path fill="none" stroke-miterlimit="10" d="m72 57 15-10h60v70l-7.2 9.44" data-cell-id="oWbz2HTyQ65bcpPEo5mm-21" pointer-events="stroke"/><path fill="none" stroke-miterlimit="10" d="m137 57 10-10" data-cell-id="oWbz2HTyQ65bcpPEo5mm-22" pointer-events="stroke"/><path fill="none" stroke-miterlimit="10" d="M80 53h60" data-cell-id="oWbz2HTyQ65bcpPEo5mm-23" pointer-events="stroke"/><path fill="none" stroke-miterlimit="10" d="M82 51h60" data-cell-id="oWbz2HTyQ65bcpPEo5mm-24" pointer-events="stroke"/><path fill="none" stroke-miterlimit="10" d="M84 49h60" data-cell-id="oWbz2HTyQ65bcpPEo5mm-25" pointer-events="stroke"/><path fill="none" stroke-miterlimit="10" d="M141 124V54" data-cell-id="oWbz2HTyQ65bcpPEo5mm-26" pointer-events="stroke"/><path fill="none" stroke-miterlimit="10" d="M143 121V51" data-cell-id="oWbz2HTyQ65bcpPEo5mm-27" pointer-events="stroke"/><path fill="none" stroke-miterlimit="10" d="M145 120V50" data-cell-id="oWbz2HTyQ65bcpPEo5mm-28" pointer-events="stroke"/><path fill="none" stroke-miterlimit="10" stroke-width="4" d="M32 132V62" data-cell-id="oWbz2HTyQ65bcpPEo5mm-29" pointer-events="stroke"/><path fill="none" stroke-miterlimit="10" stroke-width="4" d="M12 102V82l20-10" data-cell-id="oWbz2HTyQ65bcpPEo5mm-30" pointer-events="stroke"/><path fill="none" stroke-miterlimit="10" stroke-width="4" d="M62 82 32 92" data-cell-id="oWbz2HTyQ65bcpPEo5mm-31" pointer-events="stroke"/><path fill="none" stroke-miterlimit="10" stroke-width="4" d="m12 172 20-40" data-cell-id="oWbz2HTyQ65bcpPEo5mm-32" pointer-events="stroke"/><circle cx="32" cy="32" r="30" fill="transparent" stroke-width="4" data-cell-id="oWbz2HTyQ65bcpPEo5mm-33" pointer-events="all"/><path fill="none" stroke-miterlimit="10" stroke-width="5" d="M52 152v20-20l-20-20" data-cell-id="oWbz2HTyQ65bcpPEo5mm-34" pointer-events="stroke"/></g></g></svg>
+            </div>
+            <p id="frame-2-desc" class="sr-only">
+                Dave thinks "Now what's the number?" and looks up the number for the pizza place in a hefty phonebook
+            </p>
+        </figure>
+
+
+        <figure aria-labelledby="frame-3"
+                aria-describedby="frame-3-desc"
+                class="comic-frame">
+            <h2 id="frame-3" class="hidden">Frame 3</h2>
+
+            <div class="comic-speech">
+                <div class="speech-bubble " aria-hidden="true">
+                    I'd like the American Hot Tasty please
+                </div>
+
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="133" height="176" aria-hidden="true" class="comic-svg" viewBox="-0.5 -0.5 133 176"><g data-cell-id="0"><g data-cell-id="1"><path fill="none" stroke="light-dark(#000,#fff)" stroke-miterlimit="10" stroke-width="4" d="M32 132V62" data-cell-id="oWbz2HTyQ65bcpPEo5mm-9" pointer-events="stroke"/><path fill="none" stroke="light-dark(#000,#fff)" stroke-miterlimit="10" stroke-width="4" d="m2 102 10-20 20-10" data-cell-id="oWbz2HTyQ65bcpPEo5mm-10" pointer-events="stroke"/><path fill="none" stroke="light-dark(#000,#fff)" stroke-miterlimit="10" stroke-width="4" d="M82 72 62 92 32 72" data-cell-id="oWbz2HTyQ65bcpPEo5mm-11" pointer-events="stroke"/><path fill="none" stroke="light-dark(#000,#fff)" stroke-miterlimit="10" stroke-width="4" d="m12 172 20-40" data-cell-id="oWbz2HTyQ65bcpPEo5mm-12" pointer-events="stroke"/><circle cx="32" cy="32" r="30" fill="transparent" stroke="light-dark(#000,#fff)" stroke-width="4" data-cell-id="oWbz2HTyQ65bcpPEo5mm-13" pointer-events="all"/><path fill="none" stroke="light-dark(#000,#fff)" stroke-miterlimit="10" stroke-width="5" d="M52 152v20-20l-20-20" data-cell-id="oWbz2HTyQ65bcpPEo5mm-14" pointer-events="stroke"/><image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGlkPSJzdmcxIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjE0LjU1MTEzMzE1NTgyMjc1NCA0LjY5ODMyODQ5NTAyNTYzNSA5LjU3OTExNTg2NzYxNDc0NiA5Ljg5ODQyMDMzMzg2MjMwNSIgaGVpZ2h0PSI5Ljg5ODQyMDMzMzg2MjMwNSIgd2lkdGg9IjkuNTc5MTE1ODY3NjE0NzQ2Ij4mI3hhOyAgJiN4YTsgIDxkZWZzIGlkPSJkZWZzMSIvPiYjeGE7ICA8ZyBpZD0ibGF5ZXIxIj4mI3hhOyAgICA8cGF0aCB0cmFuc2Zvcm09InJvdGF0ZSg0NSkiIGQ9Im0gMjAuNTQxMzM2LC04LjM0NTEzMDkgYSAwLjM4NzcyNjEzLDAuMzE5MzAzODcgMCAwIDEgLTAuMzg3MDYxLDAuMzE5MzAzNCAwLjM4NzcyNjEzLDAuMzE5MzAzODcgMCAwIDEgLTAuMzg4Mzg5LC0wLjMxODIwODEgMC4zODc3MjYxMywwLjMxOTMwMzg3IDAgMCAxIDAuMzg1NzI5LC0wLjMyMDM5NSAwLjM4NzcyNjEzLDAuMzE5MzAzODcgMCAwIDEgMC4zODk3MTIsMC4zMTcxMDkiIGlkPSJwYXRoNi04IiBzdHlsZT0iZmlsbDpub25lO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDowLjE2NTtzdHJva2UtZGFzaGFycmF5Om5vbmU7c3Ryb2tlLW9wYWNpdHk6MSIvPiYjeGE7ICAgIDxwYXRoIHRyYW5zZm9ybT0icm90YXRlKDQ1KSIgZD0ibSAyMS40NTkxNiwtOC40NDAwMjUzIGEgMC4zODc3MjYxMywwLjMxOTMwMzg3IDAgMCAxIC0wLjM4NzA2MSwwLjMxOTMwMzQgMC4zODc3MjYxMywwLjMxOTMwMzg3IDAgMCAxIC0wLjM4ODM4OSwtMC4zMTgyMDgxIDAuMzg3NzI2MTMsMC4zMTkzMDM4NyAwIDAgMSAwLjM4NTcyOSwtMC4zMjAzOTUgMC4zODc3MjYxMywwLjMxOTMwMzg3IDAgMCAxIDAuMzg5NzEyLDAuMzE3MTA5IiBpZD0icGF0aDYtMy02IiBzdHlsZT0iZmlsbDpub25lO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDowLjE2NTtzdHJva2UtZGFzaGFycmF5Om5vbmU7c3Ryb2tlLW9wYWNpdHk6MSIvPiYjeGE7ICAgIDxwYXRoIHRyYW5zZm9ybT0icm90YXRlKDQ1KSIgZD0ibSAyMi40NjI2ODcsLTguNDQwMDI1MyBhIDAuMzg3NzI2MTMsMC4zMTkzMDM4NyAwIDAgMSAtMC4zODcwNjEsMC4zMTkzMDM0IDAuMzg3NzI2MTMsMC4zMTkzMDM4NyAwIDAgMSAtMC4zODgzODksLTAuMzE4MjA4MSAwLjM4NzcyNjEzLDAuMzE5MzAzODcgMCAwIDEgMC4zODU3MjksLTAuMzIwMzk1IDAuMzg3NzI2MTMsMC4zMTkzMDM4NyAwIDAgMSAwLjM4OTcxMiwwLjMxNzEwOSIgaWQ9InBhdGg2LTEtOCIgc3R5bGU9ImZpbGw6bm9uZTtmaWxsLW9wYWNpdHk6MTtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MC4xNjU7c3Ryb2tlLWRhc2hhcnJheTpub25lO3N0cm9rZS1vcGFjaXR5OjEiLz4mI3hhOyAgICA8cGF0aCB0cmFuc2Zvcm09InJvdGF0ZSg0NSkiIGQ9Im0gMjAuNDgyOTUxLC03LjMwODY3MjQgYSAwLjM4NzcyNjEzLDAuMzE5MzAzODcgMCAwIDEgLTAuMzg3MDYyLDAuMzE5MzAzNCAwLjM4NzcyNjEzLDAuMzE5MzAzODcgMCAwIDEgLTAuMzg4Mzg4LC0wLjMxODIwODEgMC4zODc3MjYxMywwLjMxOTMwMzg3IDAgMCAxIDAuMzg1NzI4LC0wLjMyMDM5NSAwLjM4NzcyNjEzLDAuMzE5MzAzODcgMCAwIDEgMC4zODk3MTIsMC4zMTcxMDkiIGlkPSJwYXRoNi0zNi04IiBzdHlsZT0iZmlsbDpub25lO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDowLjE2NTtzdHJva2UtZGFzaGFycmF5Om5vbmU7c3Ryb2tlLW9wYWNpdHk6MSIvPiYjeGE7ICAgIDxwYXRoIHRyYW5zZm9ybT0icm90YXRlKDQ1KSIgZD0ibSAyMS41MDQ2OSwtNy4zNDUyNjg3IGEgMC4zODc3MjYxMywwLjMxOTMwMzg3IDAgMCAxIC0wLjM4NzA2MSwwLjMxOTMwMzQgMC4zODc3MjYxMywwLjMxOTMwMzg3IDAgMCAxIC0wLjM4ODM4OSwtMC4zMTgyMDgxIDAuMzg3NzI2MTMsMC4zMTkzMDM4NyAwIDAgMSAwLjM4NTcyOSwtMC4zMjAzOTUgMC4zODc3MjYxMywwLjMxOTMwMzg3IDAgMCAxIDAuMzg5NzEyLDAuMzE3MTA5IiBpZD0icGF0aDYtMTgtNCIgc3R5bGU9ImZpbGw6bm9uZTtmaWxsLW9wYWNpdHk6MTtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MC4xNjU7c3Ryb2tlLWRhc2hhcnJheTpub25lO3N0cm9rZS1vcGFjaXR5OjEiLz4mI3hhOyAgICA8cGF0aCB0cmFuc2Zvcm09InJvdGF0ZSg0NSkiIGQ9Im0gMjIuNTM1NjE4LC03LjQzNjQxMTQgYSAwLjM4NzcyNjEzLDAuMzE5MzAzODcgMCAwIDEgLTAuMzg3MDYxLDAuMzE5MzAzNCAwLjM4NzcyNjEzLDAuMzE5MzAzODcgMCAwIDEgLTAuMzg4Mzg5LC0wLjMxODIwODEgMC4zODc3MjYxMywwLjMxOTMwMzg3IDAgMCAxIDAuMzg1NzI5LC0wLjMyMDM5NDkgMC4zODc3MjYxMywwLjMxOTMwMzg3IDAgMCAxIDAuMzg5NzEyLDAuMzE3MTA5IiBpZD0icGF0aDYtMi0zIiBzdHlsZT0iZmlsbDpub25lO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDowLjE2NTtzdHJva2UtZGFzaGFycmF5Om5vbmU7c3Ryb2tlLW9wYWNpdHk6MSIvPiYjeGE7ICAgIDxwYXRoIHRyYW5zZm9ybT0icm90YXRlKDQ1KSIgZD0ibSAyMC41MTQxOTEsLTYuMjY0NjI3IGEgMC4zODc3MjYxMywwLjMxOTMwMzg3IDAgMCAxIC0wLjM4NzA2MSwwLjMxOTMwMzQgMC4zODc3MjYxMywwLjMxOTMwMzg3IDAgMCAxIC0wLjM4ODM4OSwtMC4zMTgyMDgxIDAuMzg3NzI2MTMsMC4zMTkzMDM4NyAwIDAgMSAwLjM4NTcyOSwtMC4zMjAzOTQ5IDAuMzg3NzI2MTMsMC4zMTkzMDM4NyAwIDAgMSAwLjM4OTcxMiwwLjMxNzEwOSIgaWQ9InBhdGg2LTYtMSIgc3R5bGU9ImZpbGw6bm9uZTtmaWxsLW9wYWNpdHk6MTtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MC4xNjU7c3Ryb2tlLWRhc2hhcnJheTpub25lO3N0cm9rZS1vcGFjaXR5OjEiLz4mI3hhOyAgICA8cGF0aCB0cmFuc2Zvcm09InJvdGF0ZSg0NSkiIGQ9Im0gMjEuNDMyMDE3LC02LjM1OTUyMTQgYSAwLjM4NzcyNjEzLDAuMzE5MzAzODcgMCAwIDEgLTAuMzg3MDYxLDAuMzE5MzAzNCAwLjM4NzcyNjEzLDAuMzE5MzAzODcgMCAwIDEgLTAuMzg4Mzg5LC0wLjMxODIwODEgMC4zODc3MjYxMywwLjMxOTMwMzg3IDAgMCAxIDAuMzg1NzI4LC0wLjMyMDM5NDkgMC4zODc3MjYxMywwLjMxOTMwMzg3IDAgMCAxIDAuMzg5NzEzLDAuMzE3MTA5IiBpZD0icGF0aDYtMy0xLTQiIHN0eWxlPSJmaWxsOm5vbmU7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjAuMTY1O3N0cm9rZS1kYXNoYXJyYXk6bm9uZTtzdHJva2Utb3BhY2l0eToxIi8+JiN4YTsgICAgPHBhdGggdHJhbnNmb3JtPSJyb3RhdGUoNDUpIiBkPSJtIDIyLjQzNTU0MywtNi4zNTk1MjE0IGEgMC4zODc3MjYxMywwLjMxOTMwMzg3IDAgMCAxIC0wLjM4NzA2MSwwLjMxOTMwMzQgMC4zODc3MjYxMywwLjMxOTMwMzg3IDAgMCAxIC0wLjM4ODM4OSwtMC4zMTgyMDgxIDAuMzg3NzI2MTMsMC4zMTkzMDM4NyAwIDAgMSAwLjM4NTcyOSwtMC4zMjAzOTQ5IDAuMzg3NzI2MTMsMC4zMTkzMDM4NyAwIDAgMSAwLjM4OTcxMiwwLjMxNzEwOSIgaWQ9InBhdGg2LTEtMi05IiBzdHlsZT0iZmlsbDpub25lO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDowLjE2NTtzdHJva2UtZGFzaGFycmF5Om5vbmU7c3Ryb2tlLW9wYWNpdHk6MSIvPiYjeGE7ICAgIDxwYXRoIHRyYW5zZm9ybT0icm90YXRlKDQ1KSIgZD0ibSAyMC40NTU4MDcsLTUuMjI4MTY5OSBhIDAuMzg3NzI2MTMsMC4zMTkzMDM4NyAwIDAgMSAtMC4zODcwNjEsMC4zMTkzMDM0IDAuMzg3NzI2MTMsMC4zMTkzMDM4NyAwIDAgMSAtMC4zODgzODksLTAuMzE4MjA4MSAwLjM4NzcyNjEzLDAuMzE5MzAzODcgMCAwIDEgMC4zODU3MjksLTAuMzIwMzk1IDAuMzg3NzI2MTMsMC4zMTkzMDM4NyAwIDAgMSAwLjM4OTcxMiwwLjMxNzEwOSIgaWQ9InBhdGg2LTM2LTktMiIgc3R5bGU9ImZpbGw6bm9uZTtmaWxsLW9wYWNpdHk6MTtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MC4xNjU7c3Ryb2tlLWRhc2hhcnJheTpub25lO3N0cm9rZS1vcGFjaXR5OjEiLz4mI3hhOyAgICA8cGF0aCB0cmFuc2Zvcm09InJvdGF0ZSg0NSkiIGQ9Im0gMjEuNDc3NTQ3LC01LjI2NDc2NjIgYSAwLjM4NzcyNjEzLDAuMzE5MzAzODcgMCAwIDEgLTAuMzg3MDYxLDAuMzE5MzAzNCAwLjM4NzcyNjEzLDAuMzE5MzAzODcgMCAwIDEgLTAuMzg4Mzg5LC0wLjMxODIwODEgMC4zODc3MjYxMywwLjMxOTMwMzg3IDAgMCAxIDAuMzg1NzI5LC0wLjMyMDM5NSAwLjM4NzcyNjEzLDAuMzE5MzAzODcgMCAwIDEgMC4zODk3MTIsMC4zMTcxMDkxIiBpZD0icGF0aDYtMTgtMy0wIiBzdHlsZT0iZmlsbDpub25lO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDowLjE2NTtzdHJva2UtZGFzaGFycmF5Om5vbmU7c3Ryb2tlLW9wYWNpdHk6MSIvPiYjeGE7ICAgIDxwYXRoIHRyYW5zZm9ybT0icm90YXRlKDQ1KSIgZD0ibSAyMi41MDg0NzUsLTUuMzU1OTA3OSBhIDAuMzg3NzI2MTMsMC4zMTkzMDM4NyAwIDAgMSAtMC4zODcwNjEsMC4zMTkzMDM0IDAuMzg3NzI2MTMsMC4zMTkzMDM4NyAwIDAgMSAtMC4zODgzODksLTAuMzE4MjA4MSAwLjM4NzcyNjEzLDAuMzE5MzAzODcgMCAwIDEgMC4zODU3MjgsLTAuMzIwMzk1IDAuMzg3NzI2MTMsMC4zMTkzMDM4NyAwIDAgMSAwLjM4OTcxMywwLjMxNzEwOSIgaWQ9InBhdGg2LTItMS02IiBzdHlsZT0iZmlsbDpub25lO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDowLjE2NTtzdHJva2UtZGFzaGFycmF5Om5vbmU7c3Ryb2tlLW9wYWNpdHk6MSIvPiYjeGE7ICAgIDxwYXRoIGlkPSJwYXRoMTIiIGQ9Ik0gMTYuMjg0NDk3LDguOTg2MTIzIDE3LjA1OTk0OSw5Ljk0NDAzNDUgMTUuNjAwMjc0LDExLjEzMDAyIDE0LjU1MTEzMyw5LjcxNTk2MDMgViA4LjE2NTA1NTkgbCA0LjE5NjU2NSwtMy40NjY3Mjc3IDIuMDA3MDUzLDAuMzY0OTE4OCAxLjAwMzUyNiwxLjQ1OTY3NDggLTEuMDQ5MTQxLDEuMTQwMzcwOCAtMS4zMjI4MywtMS4yNzcyMTU0IHoiIHN0eWxlPSJmaWxsOm5vbmU7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjAuMTY1O3N0cm9rZS1kYXNoYXJyYXk6bm9uZTtzdHJva2Utb3BhY2l0eToxIi8+JiN4YTsgICAgPHBhdGggaWQ9InBhdGgxMyIgZD0ibSAyMS4zOTMzNTksNi45NzkwNzAxIDIuNzM2ODksMi4xNDM4OTczIC01LjQ3Mzc4LDQuNTYxNDgzNiAtMy42OTQ4MDIsLTIuNDYzMjAxIDAuNDEwNTMzLC0wLjQxMDUzNCIgc3R5bGU9ImZpbGw6bm9uZTtmaWxsLW9wYWNpdHk6MTtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MC4xNjU7c3Ryb2tlLWRhc2hhcnJheTpub25lO3N0cm9rZS1vcGFjaXR5OjEiLz4mI3hhOyAgICA8cGF0aCBpZD0icGF0aDE0IiBkPSJtIDIzLjkwMjE3NSw5LjIxNDE5NzMgLTAuMTgyNDYsMy41MTIzNDI3IC00LjgzNTE3MiwxLjgyNDU5MyAtMC4xODI0NiwtMS4wMDM1MjYgdiAwIiBzdHlsZT0iZmlsbDpub25lO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDowLjE2NTtzdHJva2UtZGFzaGFycmF5Om5vbmU7c3Ryb2tlLW9wYWNpdHk6MSIvPiYjeGE7ICAgIDxwYXRoIGlkPSJwYXRoMTUiIGQ9Im0gMTkuMDIxMzg3LDE0LjU5Njc0OCAtNC4zMzM0MDksLTIuNjkxMjc1IDAuMjI4MDc0LC0wLjU0NzM3OCIgc3R5bGU9ImZpbGw6bm9uZTtmaWxsLW9wYWNpdHk6MTtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MC4xNjU7c3Ryb2tlLWRhc2hhcnJheTpub25lO3N0cm9rZS1vcGFjaXR5OjEiLz4mI3hhOyAgPC9nPiYjeGE7PC9zdmc+" width="60" height="60" x="71.5" y="61.5" data-cell-id="oWbz2HTyQ65bcpPEo5mm-16" preserveAspectRatio="none" class="invertable"/></g></g></svg>
+            </div>
+
+            <p id="frame-3-desc" class="sr-only">
+                Dave picks up a phone and calls the pizza place. "I'd like the American Hot Tasty please" he says
+                to the pizza place
+            </p>
+        </figure>
+
+        <figure aria-labelledby="frame-4"
+                aria-describedby="frame-4-desc"
+                class="comic-frame">
+            <h2 id="frame-4" class="hidden">Frame 4</h2>
+
+            <p class="narrator" id="frame-4-desc">
+                <span class="sr-only"> Narrator speaking</span>
+                Pizza is cooking...
+            </p>
+
+            <div class="comic-speech">
+                <svg xmlns="http://www.w3.org/2000/svg" width="176" height="135" aria-hidden="true" class="comic-svg" viewBox="-0.5 -0.5 176 135"><g data-cell-id="0"><g stroke="light-dark(#000,#fff)" data-cell-id="1"><path fill="none" stroke-width="3" d="M22 36h130v96H22z" data-cell-id="YWU42JsZBOxkns-T1D1i-39" pointer-events="all"/><path fill="none" stroke-miterlimit="10" stroke-width="4" d="M22 36H2" data-cell-id="YWU42JsZBOxkns-T1D1i-46" pointer-events="stroke"/><path fill="none" stroke-miterlimit="10" stroke-width="4" d="M2 36 12 6" data-cell-id="YWU42JsZBOxkns-T1D1i-47" pointer-events="stroke"/><path fill="none" stroke-miterlimit="10" stroke-width="4" d="M12 5.66 162 6" data-cell-id="YWU42JsZBOxkns-T1D1i-48" pointer-events="stroke"/><path fill="none" stroke-miterlimit="10" stroke-width="4" d="M172 36 162 2" data-cell-id="YWU42JsZBOxkns-T1D1i-49" pointer-events="stroke"/><path fill="none" stroke-miterlimit="10" stroke-width="4" d="M172 36h-20" data-cell-id="YWU42JsZBOxkns-T1D1i-50" pointer-events="stroke"/><path fill="none" stroke-width="4" d="M32 82h40v50H32z" data-cell-id="YWU42JsZBOxkns-T1D1i-51" pointer-events="all"/><path fill="none" stroke-miterlimit="10" stroke-width="4" d="m84.984 51.111 53.232 20.936-35.632 44.747Z" data-cell-id="YWU42JsZBOxkns-T1D1i-53" pointer-events="all"/><circle cx="102" cy="68" r="5" fill="transparent" data-cell-id="YWU42JsZBOxkns-T1D1i-54" pointer-events="all"/><circle cx="121" cy="77" r="5" fill="transparent" data-cell-id="YWU42JsZBOxkns-T1D1i-55" pointer-events="all"/><circle cx="108" cy="87" r="5" fill="transparent" data-cell-id="YWU42JsZBOxkns-T1D1i-56" pointer-events="all"/></g></g></svg>
+            </div>
+        </figure>
+
+        <figure aria-labelledby="frame-5"
+                aria-describedby="frame-5-desc"
+                class="comic-frame">
+            <h2 id="frame-5" class="hidden">Frame 5</h2>
+
+            <p class="narrator" id="frame-5-desc">
+                <span class="sr-only">Narrator speaking</span>
+                Dave waits patiently
+            </p>
+            <div class="comic-speech">
+                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="176" aria-hidden="true" class="comic-svg" viewBox="-0.5 -0.5 64 176"><g data-cell-id="0"><g stroke="light-dark(#000,#fff)" data-cell-id="1"><path fill="none" stroke-miterlimit="10" stroke-width="4" d="M32 131.5v-70" data-cell-id="YWU42JsZBOxkns-T1D1i-21" pointer-events="stroke"/><path fill="none" stroke-miterlimit="10" stroke-width="4" d="M32 110 12 81.5l20-10" data-cell-id="YWU42JsZBOxkns-T1D1i-22" pointer-events="stroke"/><path fill="none" stroke-miterlimit="10" stroke-width="4" d="M32 170v-38.5" data-cell-id="YWU42JsZBOxkns-T1D1i-23" pointer-events="stroke"/><circle cx="32" cy="31.5" r="30" fill="transparent" stroke-width="4" data-cell-id="YWU42JsZBOxkns-T1D1i-24" pointer-events="all"/><path fill="none" stroke-miterlimit="10" stroke-width="5" d="M52 151.5v20-20l-20-20" data-cell-id="YWU42JsZBOxkns-T1D1i-25" pointer-events="stroke"/><path fill="none" stroke-miterlimit="10" stroke-width="5" d="m32 71.5 20 10L32 120" data-cell-id="YWU42JsZBOxkns-T1D1i-26" pointer-events="stroke"/></g></g></svg>
+            </div>
+        </figure>
+
+        <figure aria-labelledby="frame-6"
+                aria-describedby="frame-6-desc"
+                class="comic-frame">
+            <h2 id="frame-6" class="hidden">Frame 6</h2>
+
+            <div class="comic-speech">
+                <svg xmlns="http://www.w3.org/2000/svg" width="143" height="145" aria-hidden="true" class="comic-svg" viewBox="-0.5 -0.5 143 145"><g data-cell-id="0"><g stroke="light-dark(#000,#fff)" data-cell-id="1"><circle cx="27" cy="118" r="25" fill="transparent" stroke-width="4" data-cell-id="YWU42JsZBOxkns-T1D1i-59" pointer-events="all"/><circle cx="115" cy="118" r="25" fill="transparent" stroke-width="4" data-cell-id="YWU42JsZBOxkns-T1D1i-58" pointer-events="all"/><path fill="none" stroke-miterlimit="10" stroke-width="4" d="M116 90H55" data-cell-id="YWU42JsZBOxkns-T1D1i-60" pointer-events="stroke"/><path fill="none" stroke-miterlimit="10" stroke-width="4" d="m105 60 10 60" data-cell-id="YWU42JsZBOxkns-T1D1i-61" pointer-events="stroke"/><path fill="none" stroke-miterlimit="10" stroke-width="4" d="m115 90-60 30" data-cell-id="YWU42JsZBOxkns-T1D1i-62" pointer-events="stroke"/><path fill="none" stroke-miterlimit="10" stroke-width="4" d="M55 80v40" data-cell-id="YWU42JsZBOxkns-T1D1i-63" pointer-events="stroke"/><path fill="none" stroke-miterlimit="10" stroke-width="4" d="m56 90-31 30" data-cell-id="YWU42JsZBOxkns-T1D1i-64" pointer-events="stroke"/><path fill="none" stroke-miterlimit="10" stroke-width="4" d="M56 120H25" data-cell-id="YWU42JsZBOxkns-T1D1i-65" pointer-events="stroke"/><path fill="none" stroke-miterlimit="10" stroke-width="4" d="M120 56 90 66" data-cell-id="YWU42JsZBOxkns-T1D1i-66" pointer-events="stroke"/><path fill="none" stroke-miterlimit="10" stroke-width="4" d="m55 80 5.92-40" data-cell-id="YWU42JsZBOxkns-T1D1i-68" pointer-events="stroke"/><circle cx="72" cy="22" r="20" fill="transparent" stroke-width="4" data-cell-id="YWU42JsZBOxkns-T1D1i-69" pointer-events="all"/><path fill="none" stroke-miterlimit="10" stroke-width="4" d="m55 60 20 10 20-10" data-cell-id="YWU42JsZBOxkns-T1D1i-70" pointer-events="stroke"/><path fill="none" stroke-miterlimit="10" stroke-width="4" d="m59 52 20 10 36-2" data-cell-id="YWU42JsZBOxkns-T1D1i-71" pointer-events="stroke"/><path fill="none" stroke-miterlimit="10" stroke-width="4" d="m55 80 10 30-10 10" data-cell-id="YWU42JsZBOxkns-T1D1i-72" pointer-events="stroke"/><path fill="none" stroke-miterlimit="10" stroke-width="4" d="m26 120 .2-37" data-cell-id="YWU42JsZBOxkns-T1D1i-74" pointer-events="stroke"/><path fill="none" stroke-width="4" d="M2.5 63H50v20H2.5z" data-cell-id="YWU42JsZBOxkns-T1D1i-75" pointer-events="all"/><path fill="none" stroke-miterlimit="10" d="m16.563 66.086 23.062 1.067-19.438 12.455Z" data-cell-id="YWU42JsZBOxkns-T1D1i-78" pointer-events="all"/><circle cx="22" cy="72.5" r="3" fill="transparent" data-cell-id="YWU42JsZBOxkns-T1D1i-79" pointer-events="all"/><circle cx="28" cy="70" r="3" fill="transparent" data-cell-id="YWU42JsZBOxkns-T1D1i-80" pointer-events="all"/></g></g></svg></div>
+            <p id="frame-6-desc" class="sr-only">
+                A pizza delivery stickman is riding a motorbike with a pizza box on the back
+            </p>
+        </figure>
+
+        <figure aria-labelledby="frame-7"
+                aria-describedby="frame-7-desc"
+                class="comic-frame">
+            <h2 id="frame-7" class="hidden">Frame 7</h2>
+
+            <div class="comic-speechless">
+                <svg xmlns="http://www.w3.org/2000/svg" width="85" height="176" aria-hidden="true" class="comic-svg bottom-left" viewBox="-0.5 -0.5 85 176"><g data-cell-id="0"><g stroke="light-dark(#000,#fff)" data-cell-id="1"><path fill="none" stroke-miterlimit="10" stroke-width="4" d="M32 132V62" data-cell-id="YWU42JsZBOxkns-T1D1i-27" pointer-events="stroke"/><path fill="none" stroke-miterlimit="10" stroke-width="4" d="m2 102 10-20 20-10" data-cell-id="YWU42JsZBOxkns-T1D1i-28" pointer-events="stroke"/><path fill="none" stroke-miterlimit="10" stroke-width="4" d="M82 72 62 92 32 72" data-cell-id="YWU42JsZBOxkns-T1D1i-29" pointer-events="stroke"/><path fill="none" stroke-miterlimit="10" stroke-width="4" d="m12 172 20-40" data-cell-id="YWU42JsZBOxkns-T1D1i-30" pointer-events="stroke"/><circle cx="32" cy="32" r="30" fill="transparent" stroke-width="4" data-cell-id="YWU42JsZBOxkns-T1D1i-31" pointer-events="all"/><path fill="none" stroke-miterlimit="10" stroke-width="5" d="M52 152v20-20l-20-20" data-cell-id="YWU42JsZBOxkns-T1D1i-32" pointer-events="stroke"/></g></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="103" height="105" aria-hidden="true" class="comic-svg" viewBox="-0.5 -0.5 103 105"><g data-cell-id="0"><g stroke="light-dark(#000,#fff)" data-cell-id="1"><path fill="none" stroke-miterlimit="10" stroke-width="4" d="m61.353 12.363 28.284 48.99-48.99 28.284-28.284-48.99Z" data-cell-id="YWU42JsZBOxkns-T1D1i-85" pointer-events="all"/><path fill="none" stroke-miterlimit="10" stroke-width="4" d="m12.36 40.65-1.39 20.33" data-cell-id="YWU42JsZBOxkns-T1D1i-87" pointer-events="stroke"/><path fill="none" stroke-miterlimit="10" stroke-width="4" d="m11 61 30 40" data-cell-id="YWU42JsZBOxkns-T1D1i-88" pointer-events="stroke"/><path fill="none" stroke-miterlimit="10" stroke-width="4" d="m42 91-1 10" data-cell-id="YWU42JsZBOxkns-T1D1i-89" pointer-events="stroke"/><path fill="none" stroke-miterlimit="10" stroke-width="4" d="m41 101 50-30" data-cell-id="YWU42JsZBOxkns-T1D1i-90" pointer-events="stroke"/><path fill="none" stroke-miterlimit="10" stroke-width="4" d="m92 61-1 10" data-cell-id="YWU42JsZBOxkns-T1D1i-92" pointer-events="stroke"/><path fill="none" stroke-miterlimit="10" stroke-width="2" d="m36.612 37.632 39.885 9.76-29.662 28.394Z" data-cell-id="YWU42JsZBOxkns-T1D1i-93" pointer-events="all"/><circle cx="48.11" cy="49" r="5" fill="transparent" data-cell-id="YWU42JsZBOxkns-T1D1i-94" pointer-events="all"/><circle cx="59.11" cy="52.05" r="5" fill="transparent" data-cell-id="YWU42JsZBOxkns-T1D1i-95" pointer-events="all"/><circle cx="51" cy="61" r="5" fill="transparent" data-cell-id="YWU42JsZBOxkns-T1D1i-99" pointer-events="all"/></g></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="85" height="176" aria-hidden="true" class="comic-svg bottom-right" viewBox="-0.5 -0.5 85 176"><g data-cell-id="0"><g class="flip-horizontal" stroke="light-dark(#000,#fff)" data-cell-id="1"><path fill="none" stroke-miterlimit="10" stroke-width="4" d="M32 132V62" data-cell-id="YWU42JsZBOxkns-T1D1i-27" pointer-events="stroke"/><path fill="none" stroke-miterlimit="10" stroke-width="4" d="m2 102 10-20 20-10" data-cell-id="YWU42JsZBOxkns-T1D1i-28" pointer-events="stroke"/><path fill="none" stroke-miterlimit="10" stroke-width="4" d="M82 72 62 92 32 72" data-cell-id="YWU42JsZBOxkns-T1D1i-29" pointer-events="stroke"/><path fill="none" stroke-miterlimit="10" stroke-width="4" d="m12 172 20-40" data-cell-id="YWU42JsZBOxkns-T1D1i-30" pointer-events="stroke"/><circle cx="32" cy="32" r="30" fill="transparent" stroke-width="4" data-cell-id="YWU42JsZBOxkns-T1D1i-31" pointer-events="all"/><path fill="none" stroke-miterlimit="10" stroke-width="5" d="M52 152v20-20l-20-20" data-cell-id="YWU42JsZBOxkns-T1D1i-32" pointer-events="stroke"/></g></g></svg>
+            </div>
+            <p id="frame-7-desc" class="sr-only">
+                The pizza arrives and the delivery man hands it to Dave
+            </p>
+        </figure>
+
+        <figure aria-labelledby="frame-8"
+                aria-describedby="frame-8-desc"
+                class="comic-frame">
+            <h2 id="frame-8" class="hidden">Frame 8</h2>
+            <div class="comic-speech">
+                <div class="thought-bubble " aria-hidden="true">
+                    <div class="small-circle"></div>
+                    Praise the delicious pizza!
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="81" height="172" aria-hidden="true" class="comic-svg" viewBox="-0.5 -0.5 81 172"><g data-cell-id="0"><g stroke="light-dark(#000,#fff)" data-cell-id="1"><path fill="none" stroke-miterlimit="10" stroke-width="4" d="M47 128V58" data-cell-id="YWU42JsZBOxkns-T1D1i-33" pointer-events="stroke"/><path fill="none" stroke-miterlimit="10" stroke-width="4" d="M77 38 57 68H47" data-cell-id="YWU42JsZBOxkns-T1D1i-34" pointer-events="stroke"/><path fill="none" stroke-miterlimit="10" stroke-width="4" d="M77 48 67 78H47" data-cell-id="YWU42JsZBOxkns-T1D1i-35" pointer-events="stroke"/><path fill="none" stroke-miterlimit="10" stroke-width="4" d="m37 168 10-40" data-cell-id="YWU42JsZBOxkns-T1D1i-36" pointer-events="stroke"/><circle cx="32" cy="32" r="30" fill="transparent" stroke-width="4" data-cell-id="YWU42JsZBOxkns-T1D1i-37" pointer-events="all"/><path fill="none" stroke-miterlimit="10" stroke-width="5" d="m77 168-10-20-20-20" data-cell-id="YWU42JsZBOxkns-T1D1i-38" pointer-events="stroke"/></g></g></svg>
+            </div>
+            <p id="frame-8-desc" class="sr-only">
+                Dave says "Praise the delicious pizza!"
+            </p>
+        </figure>
+
+        <figure aria-labelledby="frame-9"
+                aria-describedby="frame-9-desc"
+                class="comic-frame">
+            <h2 id="frame-9" class="hidden">Frame 9</h2>
+            <p id="frame-9-desc">Want another pizza? Well you already have the number!</p>
+        </figure>
+    </div>
+
+    {%- include comic.html -%}
+
+    <p>
+        Notice how Dave got the number for Pizza Hut. He could have asked literally everyone he know
+        or strangers on the street but that would take a long time! Instead, there's this useful thing called a "phone book"
+        that lists all companies with their phone numbers (like a physical contact list...).
+    </p>
+
+    <p>
+        Once he's got that he can call them and place his order, he is the client, making a request to the server (Pizza Hut). He waits a while
+        and then a pizza arrives! His request has been fulfilled on the server side (Pizza hut cooked his pizza).
+    </p>
+
+    <p>
+        Having the number ready for the next order is the "cache", like remembering something rather than looking it up again.
+        If Dave can remember the number when he next wants pizza it'll be faster to order, rather than looking in the phone book every time.
+        Much like how if the client remembers where it found the server, the next request will be quicker as it doesn't need to ask the DNS server.
+    </p>
+</section>
