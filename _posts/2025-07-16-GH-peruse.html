@@ -1,0 +1,62 @@
+---
+layout: post
+title:  "Git Peruse"
+date:   2025-07-16 09:52 +0100
+categories: git github cli plugin
+---
+<p>
+    <a href="https://github.com/hbk619/gh-peruse">GH Peruse</a> is a Github CLI plugin/command line utility to
+    read and interact with pull request comments one at a time.
+</p>
+
+<h2>Why?</h2>
+
+<p>
+Inspired by a friends frustration at using the Github UI with Voiceover and the Github CLI only allowing you to view
+    all comments at once, I created a plugin for the Github CLI to read comments one by one and allow replying to and
+    resolving of threads.
+</p>
+
+<h2>What?</h2>
+<h3>Reading comments</h3>
+<p>
+    The default behaviour fetches the main body comments and threads and allows you to navigate backwards and forwards,
+    outputting the file name, path and line number, along with the username and comment itself.
+</p>
+
+<h3>Replying and resolving</h3>
+
+<p>
+Using 'c' you can reply to a comment, and 'res' to  resolve a thread.
+</p>
+
+<h3>Copy</h3>
+
+<p>
+Sometimes a comment is really long and you want to read in a different editor, 'x' will copy the contents
+    of the comment to your clipboard.
+</p>
+
+<h3>Resolved threads</h3>
+
+<p>
+    If the comment has already been resolved, 'This comment is resolved' will be output as generally there's no need
+    to review it, but if you do want to 'e' will expand it and show you the contents.
+</p>
+
+<h2>How?</h2>
+<h3>Github CLI extension</h3>
+<p>
+    Install the <a href="https://cli.github.com/">Github CLI</a>. Then run <code>gh auth login</code> and authorise
+    in the browser.
+</p>
+<p>
+    Lastly, run <code>gh extension install https://github.com/hbk619/gh-peruse</code>. Now the
+    <code>gh peruse pr</code> command is available! Add -h for more info.
+</p>
+<h3>Without Github CLI</h3>
+<p>
+    If you don't want/can't use the Github CLI that's ok. You can
+    <a href="https://github.com/hbk619/gh-peruse?tab=readme-ov-file#without-installing-github-cli">install without the Github CLI</a>.
+    This is a little more involved as you need to create tokens but when setup you'll be able to run <code>git peruse pr</code>.
+</p>
