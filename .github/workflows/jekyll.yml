@@ -1,10 +1,13 @@
 name: Deploy Jekyll site to Pages
 
 on:
-  push:
-    branches: ["main"]
-
-  workflow_dispatch:
+  workflow_run:
+    types:
+      - completed
+    workflows:
+      - Tests
+    branches:
+      - main
 
 permissions:
   contents: read
@@ -19,6 +22,7 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
